@@ -78,7 +78,7 @@ class LocalCorpusService:
     def __init__(self) -> None:
         self.base_url: str = (getattr(settings, "RESEARCH_API_URL", "") or "").rstrip("/")
         self.api_key: str = getattr(settings, "RESEARCH_API_KEY", "") or ""
-        self.timeout = getattr(settings, "RESEARCH_TIMEOUT", (6, 30))
+        self.timeout = getattr(settings, "RESEARCH_READ_TIMEOUT_SECONDS", (6, 30))
 
     @property
     def enabled(self) -> bool:
